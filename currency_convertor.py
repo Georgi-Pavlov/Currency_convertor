@@ -1,7 +1,18 @@
 from currency_functions import convert_currency
 
-amount_ = float(input('Enter amount to be converted: '))
-from_curr = input('From currency to convert: ')
-to_curr = input('To currency to convert: ')
-converted = convert_currency(amount_, from_curr, to_curr)
-print(f'{amount_} {from_curr} = {converted} {to_curr}')
+while True:
+    try:
+        amount = float(input('Enter amount to be converted: '))
+        break
+    except ValueError:
+        print("Invalid amount.")
+
+from_curr = input('From currency: ').upper()
+to_curr = input('To currency: ').upper()
+
+result = convert_currency(amount, from_curr, to_curr)
+
+if result is None:
+    print('Conversion failed: unsupported currency or API error!')
+else:
+    print(f'{amount:.2f} {from_curr} = {result:.2f} {to_curr}')
