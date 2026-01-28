@@ -34,5 +34,6 @@ def convert_currency(amount, from_currency, to_currency):
 
     if rate is None:
         return None
+
     return amount * rate
 
