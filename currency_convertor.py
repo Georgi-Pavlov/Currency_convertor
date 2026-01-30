@@ -24,23 +24,92 @@ def on_convert():
 
 root = tk.Tk()
 root.title("Currency Converter")
-root.geometry("400x250")
+root.geometry("450x350")
+root.resizable(False, False)
 
-tk.Label(root, text="Amount").pack()
-amount_entry = tk.Entry(root)
-amount_entry.pack()
+BG_COLOR = "#1e1e1e"
+FG_COLOR = "#ffffff"
+ENTRY_BG = "#2d2d2d"
+ACCENT = "#3a7ff6"
 
-tk.Label(root, text="From Currency (e.g. USD)").pack()
-from_entry = tk.Entry(root)
-from_entry.pack()
+root.configure(bg=BG_COLOR)
 
-tk.Label(root, text="To Currency (e.g. EUR)").pack()
-to_entry = tk.Entry(root)
-to_entry.pack()
+tk.Label(
+    root,
+    text="Amount",
+    bg=BG_COLOR,
+    fg=FG_COLOR,
+    font=("Segoe UI", 11)
+).pack(pady=(10, 2))
 
-tk.Button(root, text="Convert", command=on_convert).pack(pady=10)
+amount_entry = tk.Entry(
+    root,
+    bg=ENTRY_BG,
+    fg=FG_COLOR,
+    insertbackground=FG_COLOR,
+    font=("Segoe UI", 11),
+    relief="flat"
+)
+amount_entry.pack(ipadx=8, ipady=5)
 
-result_label = tk.Label(root, text="", font=("Arial", 12))
+tk.Label(
+    root,
+    text="From Currency (e.g. USD)",
+    bg=BG_COLOR,
+    fg=FG_COLOR,
+    font=("Segoe UI", 11)
+).pack(pady=(10, 2))
+
+from_entry = tk.Entry(
+    root,
+    bg=ENTRY_BG,
+    fg=FG_COLOR,
+    insertbackground=FG_COLOR,
+    font=("Segoe UI", 11),
+    relief="flat"
+)
+from_entry.pack(ipadx=8, ipady=5)
+
+tk.Label(
+    root,
+    text="To Currency (e.g. EUR)",
+    bg=BG_COLOR,
+    fg=FG_COLOR,
+    font=("Segoe UI", 11)
+).pack(pady=(10, 2))
+
+to_entry = tk.Entry(
+    root,
+    bg=ENTRY_BG,
+    fg=FG_COLOR,
+    insertbackground=FG_COLOR,
+    font=("Segoe UI", 11),
+    relief="flat"
+)
+to_entry.pack(ipadx=8, ipady=5)
+
+# --- Button ---
+tk.Button(
+    root,
+    text="Convert",
+    command=on_convert,
+    bg=ACCENT,
+    fg="white",
+    font=("Segoe UI", 11, "bold"),
+    relief="flat",
+    activebackground="#2f6bdc",
+    activeforeground="white",
+    cursor="hand2"
+).pack(pady=15, ipadx=10, ipady=5)
+
+# --- Result ---
+result_label = tk.Label(
+    root,
+    text="",
+    bg=BG_COLOR,
+    fg=FG_COLOR,
+    font=("Segoe UI", 15, "bold")
+)
 result_label.pack()
 
 root.mainloop()
