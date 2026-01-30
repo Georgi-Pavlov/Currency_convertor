@@ -7,6 +7,8 @@ This project started as a console application and evolved into a small desktop a
 - Handling errors properly
 - Building a basic GUI with Tkinter
 
+<img width="447" height="375" alt="image" src="https://github.com/user-attachments/assets/801dac0c-6d07-40e4-b04a-9a5d04a34c98" />
+
 Features
 
 - Fetches real-time exchange rates from an online API
